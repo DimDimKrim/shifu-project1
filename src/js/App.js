@@ -1,26 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom"
+import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Home from './Home.js';
-import Admin from './Admin.js';
+import posts from '../data/list.json';
+import Routers from './router.jsx';
 
-const list = JSON.parse(localStorage.getItem("posts"));
-
-
-export default function () {
-  return (
-    <div>
-      <h1>Main Page</h1>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            <Home name={'Home, '} />
-          </Route>
-          <Route exact path="/admin">
-            <Admin posts={list} />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </div>
-  )
+if (!localStorage.getItem('posts')) {
+  localStorage.setItem('posts', posts);
 }
+
+ReactDOM.render(
+  <Routers />,
+  document.getElementById('root')
+);
