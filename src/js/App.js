@@ -6,7 +6,7 @@ import posts from '../data/list.json';
 import Routers from './router.jsx';
 
 if (!localStorage.getItem('posts')) {
-  localStorage.setItem('posts', posts);
+  localStorage.setItem('posts', JSON.stringify(posts));
 }
 
 ReactDOM.render(

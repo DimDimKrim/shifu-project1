@@ -30,8 +30,10 @@ export default class Admin extends React.Component {
     return (
       <div>
         <Link to="/admin/add" className="btn btn-info">Добавить элемент</Link>
+        
 
-        <Link to="/">← Main Page</Link>
+
+       <Link to="/">← Main Page</Link>
         {this.state.posts.map(post => (
           <Post key={post.slug} post={post} onRemove={this.onRemove(post.slug)} />
         ))}

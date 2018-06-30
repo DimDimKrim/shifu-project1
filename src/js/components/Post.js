@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 export default (props) => {
   const { post, onRemove } = props;
 
@@ -14,6 +14,9 @@ export default (props) => {
       >
         Удалить
       </button>
+      <Link to={`/admin/edit/${post.slug}/`} className="btn btn-primary">Редактировать</Link>
+      
+
     </div>
   )
 }

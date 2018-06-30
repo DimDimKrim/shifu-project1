@@ -23,7 +23,7 @@ export default class Add extends React.Component {
   onAdd() {
     const oldPosts = JSON.parse(localStorage.getItem('posts'));
     const newPost = {
-      slug: +new Date(),
+      slug: (+new Date()).toString(),
       title: this.state.value,
       content: '',
     }
